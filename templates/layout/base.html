@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+        {% block header %}
+        {% endblock %}
+        <title>PushJet Webinterface</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="col-md-6 col-md-offset-3">
+                <h1>PushJet Webinterface</h1>
+                <ul id="myTabs" class="nav nav-tabs nav-justified" role="tablist">
+                    <li role="presentation" class="active"><a href="#message" aria-controls="message" data-toggle="tab" role="tab">Message</a></li>
+                    <li role="presentation"><a href="#service" aria-controls="service" data-toggle="tab" role="tab">Service</a></li>
+                    <li role="presentation"><a href="#subscription" aria-controls="subscription" data-toggle="tab" role="tab">Subscription</a></li>
+                </ul>
+                <br>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="message">
+                        <ul class="nav nav-pills nav-justified">
+                            <li role="presentation"><a href="/web/message/send">Send Message</a></li>
+                            <li role="presentation"><a href="/web/message/fetchunread">Fetch Unread Messages</a></li>
+                            <li role="presentation"><a href="/web/message/markread">Mark Messages as Read</a></li>
+                        </ul>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="service">
+                        <ul class="nav nav-pills nav-justified">
+                            <li role="presentation"><a href="/web/service/create">Create Service</a></li>
+                            <li role="presentation"><a href="/web/service/getinfo">Get Service Info</a></li>
+                            <li role="presentation"><a href="/web/service/update">Update Service</a></li>
+                            <li role="presentation"><a href="/web/service/delete">Delete Service</a></li>
+                        </ul>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="subscription">
+                        <ul class="nav nav-pills nav-justified">
+                            <li role="presentation"><a href="/web/subscription/subscribe">Subscribe to a Service</a></li>
+                            <li role="presentation"><a href="/web/subscription/get">Get Subscriptions</a></li>
+                            <li role="presentation"><a href="/web/subscription/unsubscribe">Unsubscribe from a Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% block body %}
+                {% endblock %}
+                <pre id="result">
+                </pre>
+            </div>
+            <script src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}" charset="utf-8"></script>
+            <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" charset="utf-8"></script>
+            <script src="{{ url_for('static', filename='js/app.js') }}" charset="utf-8"></script>
+            {% block footer %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

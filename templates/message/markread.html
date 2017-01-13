@@ -1,0 +1,11 @@
+{% extends "layout/message.html" %}
+{% block content %}
+<div>
+    <h3>Mark messages as read</h3>
+    <form id="markread" class="form-inline" action="/message" method="delete">
+        <label>UUID:</label>
+        <input class="form-control" type="text" name="uuid" value=""> <br> <br>
+        <input class="btn btn-default" type="submit" name="submit">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout/service.html" %}
+{% block content %}
+<div>
+    <h3>Get Service Info</h3> <br>
+    <form id="getinfo" class="form-inline" action="/service" method="get">
+        <label>Service Key:</label>
+        <select class="form-control" name="service">
+            <option value="">Select</option>
+            {% for service in services %}
+                <option value="{{ service.public }}">{{ service.name }} ({{ service.public }})</option>
+            {% endfor %}
+        </select> <br>
+        <label>Service Secret:</label>
+        <select class="form-control" name="secret">
+            <option value="">Select</option>
+            {% for service in services %}
+                <option value="{{ service.secret }}">{{ service.name }} ({{ service.secret }})</option>
+            {% endfor %}
+        </select> <br> <br>
+        <input class="btn btn-default" type="submit">
+    </form>
+</div>
+{% endblock %}

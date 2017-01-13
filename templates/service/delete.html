@@ -1,0 +1,16 @@
+{% extends "layout/service.html" %}
+{% block content %}
+<div>
+    <h3>Delete Service</h3> <br>
+    <form id="delete" class="form-inline" action="/service" method="delete">
+        <label>Secret:</label>
+        <select class="form-control" name="secret">
+            <option value="">Select</option>
+            {% for service in services %}
+                <option value="{{ service.secret }}">{{ service.name }} ({{ service.secret }})</option>
+            {% endfor %}
+        </select> <br> <br>
+        <input class="btn btn-default" type="submit">
+    </form>
+</div>
+{% endblock %}

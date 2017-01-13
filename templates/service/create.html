@@ -1,0 +1,13 @@
+{% extends "layout/service.html" %}
+{% block content %}
+<div>
+    <h3>Create Service</h3> <br>
+    <form id="create" class="form-inline" action="/service" method="post">
+        <label>Name:</label>
+        <input class="form-control" type="text" name="name"> <br>
+        <label>Icon:</label>
+        <input class="form-control" type="text" name="icon"> <br> <br>
+        <input class="btn btn-default" type="submit">
+    </form>
+</div>
+{% endblock %}

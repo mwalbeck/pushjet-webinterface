@@ -1,0 +1,20 @@
+{% extends "layout/service.html" %}
+{% block content %}
+<div>
+    <h3>Update Service Info</h3> <br>
+    <form id="update" class="form-inline" action="/service" method="patch">
+        <label>Service Secret:</label>
+        <select class="form-control" name="secret">
+            <option value="">Select</option>
+            {% for service in services %}
+                <option value="{{ service.secret }}">{{ service.name }} ({{ service.secret }})</option>
+            {% endfor %}
+        </select> <br> <br>
+        <label>Name:</label>
+        <input class="form-control" type="text" name="name"> <br>
+        <label>Icon:</label>
+        <input class="form-control" type="text" name="icon"> <br> <br>
+        <input class="btn btn-default" type="submit">
+    </form>
+</div>
+{% endblock %}

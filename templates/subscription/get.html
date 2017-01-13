@@ -1,0 +1,11 @@
+{% extends "layout/subscription.html" %}
+{% block content %}
+<div>
+    <h3>Get Subscriptions</h3> <br>
+    <form id="get" class="form-inline" action="/subscription" method="get">
+        <label>Device uuid:</label>
+        <input class="form-control" type="text" name="uuid"> <br> <br>
+        <input class="btn btn-default" type="submit">
+    </form>
+</div>
+{% endblock %}

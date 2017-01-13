@@ -1,0 +1,30 @@
+{% extends "layout/message.html" %}
+{% block content %}
+<div>
+    <h3>Send a Message</h3>
+    <form id="send" class="form-inline" action="/message" method="POST">
+        <label>Message:</label>
+        <input class="form-control" type="text" name="message" value=""> <br>
+        <label>Level:</label>
+        <select class="form-control" type="number" name="level" value="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select> <br>
+        <label>Service Secret:</label>
+        <select class="form-control" name="secret">
+            <option value="">Select</option>
+            {% for service in services %}
+                <option value="{{ service.secret }}">{{ service.name }} ({{ service.secret }})</option>
+            {% endfor %}
+        </select> <br>
+        <label>Title:</label>
+        <input class="form-control" type="text" name="title" value=""> <br>
+        <label>Link:</label>
+        <input class="form-control" type="text" name="link" value=""> <br> <br>
+        <input class="btn btn-default" type="submit">
+    </form>
+</div>
+{% endblock %}

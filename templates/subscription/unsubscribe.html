@@ -1,0 +1,18 @@
+{% extends "layout/subscription.html" %}
+{% block content %}
+<div>
+    <h3>Unsubscribe</h3> <br>
+    <form id="unsubscribe" class="form-inline" action="/subscription" method="delete">
+        <label>Device uuid:</label>
+        <input class="form-control" type="text" name="uuid" value=""> <br>
+        <label>Service Key:</label>
+        <select class="form-control" name="service">
+            <option value="">Select</option>
+            {% for service in services %}
+                <option value="{{ service.public }}">{{ service.name }} ({{ service.public }})</option>
+            {% endfor %}
+        </select> <br> <br>
+        <input class="btn btn-default" type="submit">
+    </form>
+</div>
+{% endblock %}

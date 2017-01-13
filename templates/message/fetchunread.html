@@ -1,0 +1,11 @@
+{% extends "layout/message.html" %}
+{% block content %}
+<div>
+    <h3>Fetch unread messages</h3>
+    <form id="unread" class="form-inline" action="/message" method="get">
+        <label>UUID:</label>
+        <input class="form-control" type="text" name="uuid" value=""> <br> <br>
+        <input class="btn btn-default" type="submit">
+    </form>
+</div>
+{% endblock %}

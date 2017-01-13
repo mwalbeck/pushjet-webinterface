@@ -1,0 +1,12 @@
+__pycache__
+models/
+application.*
+circle.*
+config.*
+database.*
+requirements.*
+shared.*
+tests.*
+utils.*
+controllers/*
+!controllers/web.py
